@@ -1,4 +1,1 @@
-function main() {
-return 9+10+2
-}
-main();
+9+10+2
