@@ -1,1 +1,5 @@
-33+77
+function main() {
+  return [...message.content()].reverse().join("");
+}
+
+main();
