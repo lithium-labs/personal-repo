@@ -1,5 +1,5 @@
 function main() {
-  return true;
+  return [...message.content].reverse().join("");
 }
 
 main();
