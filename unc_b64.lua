@@ -1,5 +1,4 @@
 --[[
-
  base64 -- v1.5.3 public domain Lua base64 encoder/decoder
  no warranty implied; use at your own risk
 
@@ -13,18 +12,16 @@
 
  COMPATIBILITY
 
- Lua 5.1+, LuaJIT
+ Lua 5.1+, LuaJIT, LuaU UNC Environment
 
  LICENSE
 
  See end of file for license information.
-
 --]]
-
 
 local base64 = {}
 
-local extract = bit32 and bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+local extract = bit32 and bit32.extract
 if not extract then
 	if bit then
 		local shl, shr, band = bit.lshift, bit.rshift, bit.band
