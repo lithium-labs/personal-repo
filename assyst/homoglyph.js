@@ -2,11 +2,8 @@ function homoglyphReplacer(strings, mappingText) {
   const map = new Map();
 
   const lines = mappingText.split(/\r?\n/);
-
   for (const rawLine of lines) {
-    if (!rawLine) continue;
-    if (rawLine.length < 2) continue;
-
+    if (!rawLine || rawLine.length < 2) continue;
     const original = rawLine[0];
     const homos = [...rawLine.slice(1)];
     if (homos.length) map.set(original, homos);
@@ -20,16 +17,8 @@ function homoglyphReplacer(strings, mappingText) {
     const chars = [...str];
     const out = chars.map(ch => {
       if (map.has(ch)) return pickRandom(map.get(ch));
-
-      const up = ch.toUpperCase();
-      if (up !== ch && map.has(up)) return pickRandom(map.get(up));
-
-      const low = ch.toLowerCase();
-      if (low !== ch && map.has(low)) return pickRandom(map.get(low));
-
       return ch;
     });
-
     return out.join('');
   });
 
