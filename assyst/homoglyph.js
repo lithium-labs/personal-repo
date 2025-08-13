@@ -98,4 +98,4 @@ xхx
 yуy
 zᴢꮓ`
 
-return homoglyphReplacer(args, homoglyphs)
+homoglyphReplacer(args, homoglyphs)
